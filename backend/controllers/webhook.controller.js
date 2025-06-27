@@ -25,7 +25,7 @@ export const clerkWebhooks = async () =>{
                 }
 
                 await User.create(userData)
-                res.JSON({})
+                res.json({})
                 break;
             }
             
@@ -37,13 +37,13 @@ export const clerkWebhooks = async () =>{
                 }
 
                 await User.findByIdAndUpdate(data.id, userData)
-                res.JSON({})
+                res.json({})
                 break;
             }
             
             case 'user.deleted' :{
                 await User.findByIdAndDelete(data.id)
-                res.JSON({})
+                res.json({})
                 break;
             }
 
@@ -53,7 +53,7 @@ export const clerkWebhooks = async () =>{
                 break;
         }
     } catch (error) {
-        res.JSON({
+        res.json({
             success:false,
             message : error.message
         })
