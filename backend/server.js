@@ -13,7 +13,7 @@ await connectDB();
 //Middlewares
 app.use(cors())
 app.use(express.json())
-spp.use(express.urlencoded({extended:true}))
+app.use(express.urlencoded({extended:true}))
 
 
 //Routes
